@@ -1,0 +1,99 @@
+/* Style général pour la page */
+body {
+    background-color: #f8f9fa; /* Couleur de fond gris clair */
+    font-family: 'Arial', sans-serif; /* Police de caractères */
+}
+
+/* Style pour la barre de navigation */
+.navbar {
+    background-color: #1961a8; /* Couleur de fond sombre */
+}
+
+.navbar-brand {
+    color: #080808b6; /* Couleur du texte pour le titre du site */
+}
+
+.nav-link {
+    color: #0f0e0e; /* Couleur des liens */
+}
+
+.nav-link:hover {
+    color: #ffc107; /* Couleur au survol des liens */
+}
+
+/* Section d'Accueil */
+header {
+    background-color: #007bff; /* Couleur d'arrière-plan de l'en-tête */
+    padding: 5rem 0; /* Espacement supérieur et inférieur */
+}
+
+header h1 {
+    font-size: 3rem; /* Taille de police du titre */
+    font-weight: bold; /* Épaisseur du texte */
+}
+
+header p {
+    font-size: 1.25rem; /* Taille de police du sous-titre */
+}
+
+/* Section À Propos */
+section {
+    margin-top: 3rem; /* Marge supérieure */
+    padding: 2rem; /* Espacement intérieur */
+    background-color: #ececf8; /* Fond blanc pour la section */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Style pour les titres de sections */
+h2 {
+    color: #1961a8; /* Couleur du titre de la section */
+    margin-bottom: 1.5rem; /* Marge inférieure */
+}
+
+/* Style pour les cartes d'articles */
+.card {
+    border: 1px solid #edeff0; /* Bordure grise pour les cartes */
+    border-radius: 8px; /* Coins arrondis */
+    transition: transform 0.2s; /* Effet de transition pour le survol */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Léger déplacement vers le haut au survol */
+}
+
+.card-title {
+    color: #1961a8; /* Couleur bleue pour le titre des articles */
+}
+
+.card-body {
+    background-color: hwb(336 87% 11%); /* Fond blanc pour les cartes */
+}
+
+.card-footer {
+    background-color: #f8f9fa; /* Fond clair pour le pied de la carte */
+}
+
+.card-footer a {
+    background-color: #007bff; /* Couleur du bouton */
+    color: #ffffff; /* Couleur du texte du bouton */
+    border-radius: 5px; /* Coins arrondis pour le bouton */
+    padding: 8px 12px; /* Espacement intérieur */
+    text-decoration: none; /* Pas de soulignement */
+}
+
+.card-footer a:hover {
+    background-color: #0056b3; /* Couleur au survol du bouton */
+}
+
+/* Style pour les messages d'alerte */
+p.text-center {
+    color: #ff0000; /* Couleur rouge pour les messages d'alerte */
+}
+
+/* Style pour les icônes de réseaux sociaux */
+.icon {
+    width: 24px; /* Taille de l'icône */
+    height: 24px; /* Taille de l'icône */
+    margin-right: 5px; /* Espacement entre les icônes */
+}

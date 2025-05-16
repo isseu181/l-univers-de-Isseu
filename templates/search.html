@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche</title>
+    <!-- Inclure Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Assurez-vous que le chemin est correct -->
+</head>
+<body>
+
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">Mon Blog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'search' %}">Rechercher</a>  <!-- Lien vers la page de recherche -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/">Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'useradmin' %}" class="nav-link admin-button">
+                            <img src="{% static 'images/user-icon.png' %}" alt="Admin" class="icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section de Recherche -->
+    <div class="container mt-5">
+        <h1 class="text-center">Recherche d'Articles</h1>
+        <p class="text-center">Trouvez vos articles préférés ici.</p>
+
+        <!-- Formulaire de recherche -->
+        <form method="GET" action="{% url 'search' %}" class="text-center mb-4">
+            <div class="input-group">
+                <input type="text" name="query" class="form-control" placeholder="Entrez votre recherche..." value="{{ query }}" required>
+                <button class="btn btn-primary" type="submit">Rechercher</button>
+            </div>
+        </form>
+
+        <!-- Résultats de la recherche -->
+        {% if results %}
+            <h3>Résultats de la Recherche :</h3>
+            <ul class="list-group">
+                {% for article in results %}
+                    <li class="list-group-item">
+                        <a href="{% url 'article_detail' article.id %}">{{ article.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            {% if query %}
+                <p class="text-muted">Aucun article trouvé pour la recherche "{{ query }}".</p>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <!-- Inclure les scripts Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
